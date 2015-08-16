@@ -26,7 +26,8 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  /*color: #f5a623;*/
+  color: #3a82ab;
   line-height: 48px;
   display: inline;
 }
@@ -61,6 +62,9 @@ h5 {
 
 }
 
+hr {
+  border-color: #e64500;
+}
 
 .date-text {
   font-style: italic;
@@ -93,23 +97,26 @@ a {
 }
 
 .welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
+  font-family: 'Tangerine', serif;
+  /*font-style: italic;*/
+  font-size: 48px;
+  color: #e64500;
   line-height: 28px;
+  text-shadow: 1px 1px 1px #aaa;
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #3a82ab;
   display: none;
+  padding-top: 20px;
 }
 
-.orange {
-  background-color: #f5ae23;
+.blue {
+  background-color: #3a82ab;
 }
 
-.orange-text {
-  color: #f5ae23;
+.blue-text {
+  color: #3a82ab;
 }
 
 .white-text {
@@ -117,6 +124,10 @@ a {
   color: #fff;
 }
 
+.star-rating {
+  color:#b8c400;
+  float: right !important;
+}
 .gray {
   background-color: #f3f3f3;
   padding-bottom: 10px;
@@ -129,7 +140,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #0c0500;
 }
 
 .flex-box {
@@ -140,7 +151,15 @@ a {
   justify-content: space-around;
   padding: 10px;
 }
-
+.flex-box-column {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+  height: 100px;
+}
 .center-content {
   padding: 2.5% 5%;
 }
@@ -152,8 +171,9 @@ ul {
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
+  width: 220px;
   display: none;
+  border-radius: 50%;
 }
 
 img {
@@ -162,6 +182,7 @@ img {
 
 span {
   padding: 5px;
+  color: #fff;
 }
 
 #lets-connect {
