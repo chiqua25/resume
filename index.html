@@ -9,9 +9,8 @@
   <link href="css/skills.css" rel="stylesheet">
   <script src="js/jQuery.js"></script>
   <script src="js/helper.js"></script>
-
-<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
-
+  <script src="js/progressbar.js"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
@@ -20,11 +19,12 @@
       <ul id="topContacts" class="flex-box"></ul>
     </div>
     <div style="clear: both;"></div>
-    <div id="workExperience" class="gray">
-      <h2>Work Experience</h2>
-    </div>
     <div id="projects">
-      <h2>Projects</h2>
+      <h2>Featured Projects</h2>
+      <div id="project-container" class="flex-box"></div>
+    </div>
+    <div id="workExperience" class="pale-yellow">
+      <h2>Work Experience</h2>
     </div>
     <div id="education" class="gray">
       <h2>Education</h2>
@@ -40,6 +40,7 @@
   </div>
 
   <script src="js/resumeBuilder.js"></script>
+  <script src="js/skillProgress.js"></script>
 
   <script type="text/javascript">
     if(document.getElementsByClassName('flex-item').length === 0) {

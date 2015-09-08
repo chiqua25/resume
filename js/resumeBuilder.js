@@ -3,71 +3,58 @@ var skills = {
 	"computer": [
 		{
 			"name": "HTML",
-			"value": "100",
-			"percent": "100%"
+			"value": "90"
 		},
 		{
 			"name": "CSS",
-			"value": "80",
-			"percent": "80%"
+			"value": "80"
 		},
 		{
 			"name": "jQuery",
-			"value": "75",
-			"percent": "75%"
+			"value": "75"
 		},
 		{
 			"name": "JavaScript",
-			"value": "40",
-			"percent": "40%"
-		},
-		{
-			"name": "Angular JS",
-			"value": "20",
-			"percent": "20%"
+			"value": "40"
 		},
 		{
 			"name": "C#",
-			"value": "50",
-			"percent": "50%"
+			"value": "60"
 		},
 		{
 			"name": "MVC",
-			"value": "50",
-			"percent": "50%"
+			"value": "65"
 		},
 		{
-			"name": "SharePoint",
-			"value": "60",
-			"percent": "60%"
+			"name" : "SQL",
+			"value" : "55"
 		}
 	]
-}
+};
 var bio = {
 	"name" : "Janice Uwujaren",
 	"role" : "Web Developer",
 	"contacts": {
-		"mobile": "(470) 242-9223",
+		"mobile": "(470) 222-5120",
 		"email": "juwujaren@outlook.com",
 		"github": "chiqua25",
 		"twitter": "@geekingcode",
-		"location": "McDonough, Georgia, US",
+		"location": "McDonough, Georgia",
 		"linkedin": "www.linkedin.com/in/januwu"
 	},
 	"skills": skills,
-	"WelcomeMessage": "elegant dev for the modern web",
+	"WelcomeMessage": "elegant development for the modern web",
 	"bioPic": "images/profilepic.jpg"
 };
 
 //header variables
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").prepend(formattedRole).prepend(formattedName);
-
+var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.WelcomeMessage);
+$("#header").prepend(formattedRole).prepend(formattedName).prepend(formattedWelcomeMessage);
 //pic and welcome message variables
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.WelcomeMessage);
-$("#header").append(formattedBioPic).append(formattedWelcomeMessage);
+$("#header").append(formattedBioPic);
 
 //top contact info variables
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
@@ -84,10 +71,10 @@ $("#topContacts").prepend(contactInfo);
     $('#header').append(HTMLskillsStart);
 
     for (var index in bio.skills.computer) {
-      var formattedSkill = HTMLskills.replace("%data%", bio.skills.computer[index].name).replace("%value%", bio.skills.computer[index].value).replace("%percent%", bio.skills.computer[index].percent);
+      var formattedSkill = HTMLskills.replace("%data%", bio.skills.computer[index].name).replace("%value%", bio.skills.computer[index].value);
       $('#skills').append(formattedSkill);
     }
-  }
+  };
 
 //work experience variables
 var work = {
@@ -151,6 +138,86 @@ var work = {
 	]
 };
 
+function displayWork() {
+	for (job in work.jobs) {
+		$("#workExperience").append(HTMLworkStart);
+
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		var formattedEmployerTitle = formattedEmployer + formattedTitle + formattedDates + formattedLocation + formattedDescription;
+
+		$(".work-entry:last").append(formattedEmployerTitle);
+	}
+};
+
+displayWork();
+
+//project experience variables
+var projects = {
+	"projects": [
+		{
+			"title" : "Portfolio",
+			"dates" : "July 2015",
+			"description" : "links to my portfolio projects",
+			"image" : "images/portfolioimage.jpg"
+		},
+		{
+			"title" : "Resume",
+			"dates" : "August 2015",
+			"description" : "interactive online resume",
+			"image" : "images/resumeimage.jpg"
+		},
+		{
+			"title" : "Arcade Game",
+			"dates" : "September 2015",
+			"description" : "recreate classic arcade game",
+			"image" : "images/gameimage.jpg"
+		},
+		{
+			"title" : "Website Optimization",
+			"dates" : "September 2015",
+			"description" : "improve performance of website",
+			"image" : "images/performanceimage.jpg"
+		},
+		{
+			"title" : "Neighborhood Map",
+			"dates" : "October 2015",
+			"description" : "single page app featuring map",
+			"image" : "images/mapimage.jpg"
+		},
+		{
+			"title" : "Feed Reader Testing",
+			"dates" : "October 2015",
+			"description" : "test app that reads RSS feeds.",
+			"image" : "images/feederimage.jpg"
+		}
+	]
+};
+
+projects.display = function() {
+	for (project in projects.projects) {
+		$("#project-container").append(HTMLprojectStart);
+
+		$(".project-entry:last").append(HTMLprojectSpan);
+
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		$(".pic-caption:last").append(formattedTitle);
+
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".pic-caption:last").append(formattedDescription);
+
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		$(".pic-caption:last").append(formattedDates);
+
+		var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].image);
+		$(".project-entry:last").append(formattedImage);
+	}
+};
+projects.display();
+
 //educational background variables
 var education = {
 	"schools": [
@@ -190,4 +257,5 @@ var education = {
 		}
 	]
 }
+$("#mapDiv").append(googleMap);
 

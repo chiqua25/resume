@@ -24,12 +24,11 @@ var HTMLlinkedin = '<li class="flex-item"><span class="blue-text"><i class="fa f
 var HTMLblog = '<li class="flex-item"><span class="blue-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="blue-text"><i class="fa fa-map-marker fa-lg"></i></span><span class="white-text">%data%</span></li>';
 
-var HTMLbioPic = '<img src="%data%" class="biopic">';
+var HTMLbioPic = '<img src="%data%" class="biopic fade-in">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><div class="progress-radial progress-%value%"><div class="overlay">%data%</div><div class="percentage">%percent%</div></div></li>';
-
+var HTMLskills = '<li class="flex-item"><div class="progress-radial progress-%value%"><div class="overlay">%data%</div></div></li>';
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
@@ -37,11 +36,18 @@ var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
+// var HTMLprojectStart = '<div class="project-entry"></div>';
+// var HTMLprojectTitle = '<a href="#">%data%</a>';
+// var HTMLprojectDates = '<div class="date-text">%data%</div>';
+// var HTMLprojectDescription = '<p><br>%data%</p>';
+// var HTMLprojectImage = '<img src="%data%">';
+
+var HTMLprojectStart = '<div class="project-entry flex-item pic pic-3d"></div>';
 var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectSpan = '<span class="pic-caption open-down"></span>'
+var HTMLprojectTitle = '<h1 class="pic-title"><a href="#">%data%</a></h1>';
+var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectDates = '<div class="date-text">%data%</div>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
