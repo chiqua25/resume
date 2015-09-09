@@ -18,26 +18,24 @@ h6 {
   overflow: auto;
 }
 
-.education-entry,
-.work-entry {
+.education-entry {
   padding: 0 5%;
 }
 
 h1 {
   font-size: 40px;
-  /*color: #f5a623;*/
   color: #668088;
   line-height: 48px;
   display: inline;
+  font: 900 400% 'Raleway';
 }
 
 h2 {
-  font-weight: bold;
-  font-size: 24px;
-  color: #668088;
-  background-color: #0E1319;
+  color: #212c38;
+  background-color: #668088;
   line-height: 29px;
   padding: 10px;
+  font: 400 200% 'Raleway';
 }
 
 h3 {
@@ -101,7 +99,7 @@ a {
   /*font-style: italic;*/
   font-size: 48px;
   /*color: #e34f26; orange color */
-  color: #e8bc0c;
+  color: #e9a729;
   line-height: 20px;
   /*text-shadow: 1px 1px 1px #aaa;*/
   float: right;
@@ -117,20 +115,23 @@ a {
   color: #668088;
   display: none;
   padding-top: 20px;
+  font: italic 400 200% 'Raleway';
 }
 
-.blue {
-  background-color: #027982;
+.footer-connect {
+  background-color: #e9a729;
+  color: #212c38;
 }
 
 .blue-text {
   /*color: #e34f26; orange color*/
-  color: #ffcd05;
+  color: #e9a729;
 }
 
 .white-text {
   font-weight: bold;
   color: #fffde8;
+  font: 400 100% 'Raleway';
 }
 
 .star-rating {
@@ -194,6 +195,7 @@ img {
 span {
   padding: 5px;
   color: #fffde8;
+  font: 400 100% 'Raleway';
 }
 
 #lets-connect {
@@ -267,7 +269,7 @@ span {
 
 /* Project Experience styling */
 #projects {
-    background: #969280;
+    background: #272829;
     color: #fff;
     font-size: 14px;
     font-family: 'Open Sans', sans-serif, 'trebuhet ms', HelveticaNeue, arial;
@@ -282,15 +284,17 @@ span {
     box-sizing: border-box
 }
 
-#project-container {
+#project-container,
+#work-container {
   justify-content: center;
+  text-align: center;
 }
 
 #projects p {
-    color: #e8bc0c;
+  color: #e8bc0c;
 }
 p {
-    line-height: 2.0em
+  line-height: 2.0em
 }
 h1 {
     font-size: 3.0em;
@@ -298,7 +302,7 @@ h1 {
 }
 a {
     text-decoration: none;
-    color: rgba(74, 92, 110, 0.92)
+    color: rgba(192, 208, 224, 0.92)
 }
 a:hover {
     color: #fff
@@ -314,7 +318,7 @@ img {
 }
 .pic {
     max-width: 300px;
-    max-height: 200px;
+    max-height: 300px;
     position: relative;
     overflow: hidden;
     margin: 10px;
@@ -348,7 +352,7 @@ img {
     width: 100%;
     height: 100%;
     background: rgba(44, 62, 80, 0.92);
-    padding: 10px;
+    padding: 2px;
     text-align: center;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";
     filter: alpha(opacity=0);
@@ -363,12 +367,17 @@ img {
     -ms-transform: scale(1.1);
     transform: scale(1.1)
 }
+
 .pic:hover .pic-image {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -o-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1)
+}
+.pic img {
+    background: #fffde8;
+    padding: 10px;
 }
 .pic-title {
     font-size: 1.4em
@@ -437,4 +446,66 @@ a:hover,
         animation: none;
         margin: 10px auto
     }
+}
+
+/* Work Experience Styles */
+#workExperience {
+    background: #272829;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Lato';
+    height: 100%;
+    line-height: 20px;
+}
+.work-container {
+  width: 100%;
+  margin: 0 auto;
+}
+.work-entry {
+  background: #fffde8;
+  padding: 5px;
+}
+.work-employer {
+    background: #212c38!important;
+    color: #fff;
+    font-size: 1.2em!important;
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.8em;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.4em;
+    background: #f8fafa;
+    padding: 10px;
+    text-transform: none;
+    font: 400 200% 'Raleway';
+}
+.work-title {
+    text-decoration: none;
+    text-transform: none;
+    color: #c03423;
+    font: 400 150% 'Raleway';
+    padding: 0;
+    background: none;
+}
+.work-dates {
+    background: #e9a729;
+    padding: 5px;
+    margin-left: 25px;
+    margin-right: 25px;;
+    color: #212c38;
+    text-align: center;
+    text-transform: uppercase;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font: 900 100% 'Lato';
+}
+p {
+    color: #212c38;
+    margin: 0 5px 15px 5px;
+    font: 400 100% 'Raleway';
+}
+.work-description {
+    border-top: 1px solid #6690b7;
+    font-family: 'Lato';
 }

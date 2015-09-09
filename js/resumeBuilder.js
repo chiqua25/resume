@@ -18,8 +18,16 @@ var skills = {
 			"value": "40"
 		},
 		{
+			"name": "AngularJS",
+			"value": "30"
+		},
+		{
 			"name": "C#",
 			"value": "60"
+		},
+		{
+			"name": "JAVA",
+			"value": "15"
 		},
 		{
 			"name": "MVC",
@@ -80,74 +88,46 @@ $("#topContacts").prepend(contactInfo);
 var work = {
 	"jobs": [
 		{
-			"employer": "CTS",
+			"employer": "Computer Technology Solutions",
 			"title": "Software Engineer",
 			"location": "Atlanta, Georgia",
 			"dates": "October 2012 to Present",
-			"description": "Design, code, test, and debug solutions according to CTS standard and methodologies and suggest options for potential solutions to client problems."
+			"description": "Lead a team of software developers supporting the development of solutions for CTS consulting engagements."
 		},
 		{
 			"employer": "CDC (SAIC/TekSystems)",
 			"title": "SharePoint Developer",
 			"location": "Atlanta, Georgia",
 			"dates": "June 2012 to October 2012",
-			"description": "Analyze requirements, design and develop technical solutions, recommend out of box or development approach based on requirements."
+			"description": "Analyze requirements and recommend out of box or development approach based on requirements."
 		},
 		{
 			"employer": "Pragmatics, Inc.",
-			"title": "SharePoint Administrator/Developer",
-			"location": "Atlanta, Georgia",
-			"dates": "June 2012 to October 2012",
-			"description": "Establish and maintain the SharePoint site for the Classroom XXI Program."
+			"title": "SharePoint Developer",
+			"location": "Reston, Virginia",
+			"dates": "February 2012 to June 2012",
+			"description": "Oversaw the creation of new capabilities and maintenance for the Classroom XXI Program’s SharePoint site."
 		},
 		{
 			"employer": "SRA International, Inc.",
-			"title": "GovWin System Administrator/SharePoint Analyst",
+			"title": "SharePoint Analyst",
 			"location": "Fairfax, Virginia",
 			"dates": "May 2010 to February 2012",
-			"description": "Provide technical support, system development, process improvement and training for the enterprise Customer Relationship Management (CRM) system for opportunity pursuits and contracts and SharePoint site collections."
-		},
-		{
-			"employer": "SRA International, Inc.",
-			"title": "Business Capture Specialist",
-			"location": "Fairfax, Virginia",
-			"dates": "May 2008 to February 2010",
-			"description": "Served on several capture/proposal teams including collecting and analyzing RFP requirements, proposal writing, editing, and review of technical proposal sections, and conducting compliance checks."
-		},
-		{
-			"employer": "3Soft USA, Inc.",
-			"title": "Consultant",
-			"location": "Annandale, Virginia",
-			"dates": "2002 to 2007",
-			"description": "Provided project management oversight for web development initiatives for OnWebAve (A Division of 3Soft USA)."
-		},
-		{
-			"employer": "Qwest Communications",
-			"title": "Spherion Consultant",
-			"location": "Arlington, Virginia",
-			"dates": "January 2001 to September 2001",
-			"description": "Implemented peering circuits with backhaul partners by determining company and backhaul partner requirements and designing architecture to meet or exceed those requirements."
-		},
-		{
-			"employer": "PSINet, Inc.",
-			"title": "Customer Provisioning Technician",
-			"location": "Ashburn, Virginia",
-			"dates": "2000 to 2001",
-			"description": "Managed the circuit provisioning lifecycle from planning and design to implementation, testing and deployment."
-		},
+			"description": "Use SharePoint Designer, InfoPath, HTML, CSS, JavaScript, and jQuery to develop custom SharePoint solutions."
+		}
 	]
 };
 
 function displayWork() {
 	for (job in work.jobs) {
-		$("#workExperience").append(HTMLworkStart);
+		$("#work-container").append(HTMLworkStart);
 
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-		var formattedEmployerTitle = formattedEmployer + formattedTitle + formattedDates + formattedLocation + formattedDescription;
+		var formattedEmployerTitle = formattedEmployer + formattedTitle + formattedLocation + formattedDates + formattedDescription;
 
 		$(".work-entry:last").append(formattedEmployerTitle);
 	}
@@ -226,34 +206,26 @@ var education = {
 			"city" : "Atlanta, Georgia, US",
 			"degree": "Masters",
 			"major": "Computer Science",
-			"gradyear": 2017
+			"gradyear": "2017"
 		},
 		{
 			"name": "Strayer University",
 			"city" : "Alexandria, Virginia, US",
 			"degree": "Bachelor of Science",
 			"major": "Computer Science",
-			"gradyear": 2008
+			"gradyear": "2008"
 		}
 	],
 "onlineCourses": [
 		{
-			"title": "JavaScript Basics",
+			"title": "Front-End Web Development",
 			"school": "Udacity",
-			"dates": "August 2015",
-			"url": "http://www.udacity.com/course/ud804"
+			"dates": "2015"
 		},
 		{
-			"title": "Responsive Web Design Fundamentals",
-			"school": "Udacity",
-			"dates": "July 2015",
-			"url": "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
-		},
-		{
-			"title": "Responsive Images",
-			"school": "Udacity",
-			"dates": "July 2015",
-			"url": "https://www.udacity.com/course/responsive-images--ud882"
+			"title": "WordPress BluePrint",
+			"school": "SkillCrush",
+			"dates": "2015"
 		}
 	]
 }
