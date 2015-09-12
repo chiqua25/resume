@@ -26,7 +26,7 @@ var skills = {
 			"value": "60"
 		},
 		{
-			"name": "JAVA",
+			"name": "Java",
 			"value": "15"
 		},
 		{
@@ -73,6 +73,7 @@ var formattedLinkedIn = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 var contactInfo = formattedMobile + formattedEmail + formattedGithub + formattedLinkedIn + formattedTwitter + formattedLocation;
 $("#topContacts").prepend(contactInfo);
+$("#footerContacts").prepend(contactInfo);
 
 //skills info
   if (bio.skills.computer.length > 0) {
@@ -204,30 +205,81 @@ var education = {
 		{
 			"name": "Georgia Institute of Technology",
 			"location" : "Atlanta, Georgia, US",
-			"degree": "Masters",
-			"major": "Computer Science",
-			"gradyear": "2017"
+			"degree": "MS, Computer Science",
+			"gradyear": "Expected 2017"
 		},
 		{
 			"name": "Strayer University",
 			"location" : "Alexandria, Virginia, US",
 			"degree": "Bachelor of Science",
 			"major": "Computer Science",
-			"gradyear": "2008"
+			"gradyear": "June 2008"
 		}
 	],
 "onlineCourses": [
 		{
-			"title": "Front-End Web Development",
+			"title": "Responsive Web Design",
 			"school": "Udacity",
-			"dates": "2015"
+			"month": "June",
+			"year": "2015"
 		},
 		{
-			"title": "WordPress BluePrint",
-			"school": "SkillCrush",
-			"dates": "2015"
+			"title": "Responsive Images",
+			"school": "Udacity",
+			"month": "June",
+			"year": "2015"
+		},
+		{
+			"title": "JavaScript & jQuery",
+			"school": "Udacity",
+			"month": "August",
+			"year": "2015"
+		},
+		{
+			"title": "Intro to WordPress",
+			"school": "Skillcrush",
+			"month": "September",
+			"year": "2015"
+		},
+		{
+			"title": "Object-Oriented JavaScript",
+			"school": "Udacity",
+			"month": "September",
+			"year": "2015"
 		}
 	]
 }
+
+function displayEducation() {
+	for (edu in education.schools) {
+		$("#education-wrapper").append(HTMLschoolStart);
+		var schoolIcon = HTMLschoolIcon;
+		var formattedSchool = HTMLschoolName.replace("%data%", education.schools[edu].name);
+		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[edu].location);
+		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[edu].degree);
+		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[edu].gradyear);
+
+		var formattedSchoolData = schoolIcon + formattedSchool + formattedLocation + formattedDegree + formattedDates;
+
+		$(".education-entry:last").append(formattedSchoolData);
+	}
+};
+
+function displayOnline() {
+	for (olc in education.onlineCourses) {
+		$("#online-container").append(HTMLonlineStart);
+		var formattedOnlineDates = HTMLonlineDates.replace("%month%", education.onlineCourses[olc].month).replace("%year%", education.onlineCourses[olc].year);
+		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[olc].title);
+		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[olc].school);
+
+		var formattedOnlineData = formattedOnlineDates + formattedOnlineTitle + formattedOnlineSchool;
+
+		$(".online-entry:last").append(formattedOnlineData);
+	}
+}
+
+displayEducation();
+displayOnline();
+
 $("#mapDiv").append(googleMap);
 
