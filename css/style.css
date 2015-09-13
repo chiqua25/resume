@@ -229,9 +229,9 @@ span {
   .welcome-message {
     display: none;
   }
-/*  #skills-h3, #skills {
+  #skills-h3, #skills {
     display: none;
-  }*/
+  }
 }
 
 #map {
