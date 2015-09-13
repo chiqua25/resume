@@ -1,17 +1,3 @@
-/*
-
-This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
-
-Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
-
-Cameron Pittman
-*/
-
-
-/*
-These are HTML strings. As part of the course, you'll be using JavaScript functions
-replace the %data% placeholder text you see in them.
-*/
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr/>';
 
@@ -24,7 +10,7 @@ var HTMLlinkedin = '<li class="flex-item"><span class="blue-text"><i class="fa f
 var HTMLblog = '<li class="flex-item"><span class="blue-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="blue-text"><i class="fa fa-map-marker fa-lg"></i></span><span class="white-text">%data%</span></li>';
 
-var HTMLbioPic = '<img src="%data%" class="biopic fade-in">';
+var HTMLbioPic = '<img src="%data%" alt="profile picture" class="biopic fade-in">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
@@ -36,16 +22,10 @@ var HTMLworkLocation = '<p>%data%</p>';
 var HTMLworkDates = '<div class="work-dates">%data%</div>';
 var HTMLworkDescription = '<p class="work-description">%data%</p>';
 
-// var HTMLprojectStart = '<div class="project-entry"></div>';
-// var HTMLprojectTitle = '<a href="#">%data%</a>';
-// var HTMLprojectDates = '<div class="date-text">%data%</div>';
-// var HTMLprojectDescription = '<p><br>%data%</p>';
-// var HTMLprojectImage = '<img src="%data%">';
-
 var HTMLprojectStart = '<div class="project-entry flex-item pic pic-3d"></div>';
-var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectImage = '<img src="%data%" alt="%text%">';
 var HTMLprojectSpan = '<span class="pic-caption open-down"></span>'
-var HTMLprojectTitle = '<h1 class="pic-title"><a href="#">%data%</a></h1>';
+var HTMLprojectTitle = '<h1 class="pic-title"><a href="%link%" target="_blank">%data%</a></h1>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 
@@ -64,48 +44,43 @@ var HTMLonlineSchool = '<p class="school center">%data%</p>';
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
-
 /*
-The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
+The International Name
 */
 $(document).ready(function() {
   $('button').click(function() {
-    var iName = inName() || function(){};
+    var iName = inName() || function() {};
     $('#name').html(iName);
   });
 });
 
 /*
-The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
+Collect Click Locations from map
 */
 clickLocations = [];
 
-function logClicks(x,y) {
-  clickLocations.push(
-    {
-      x: x,
-      y: y
-    }
-  );
+function logClicks(x, y) {
+  clickLocations.push({
+    x: x,
+    y: y
+  });
   console.log('x location: ' + x + '; y location: ' + y);
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks(x,y);
 });
 
-
-
 /*
-This is the fun part. Here's where we generate the custom Google Map for the website.
-See the documentation below for more details.
-https://developers.google.com/maps/documentation/javascript/reference
+Generate custom Google Map
 */
-var map;    // declares a global map variable
-
+var map; // declares a global map variable
 
 /*
-Start here! initializeMap() is called when page is loaded.
+Call initializeMap() when page is loaded.
 */
 function initializeMap() {
 
@@ -116,11 +91,9 @@ function initializeMap() {
   };
 
   /*
-  For the map to be displayed, the googleMap var must be
-  appended to #mapDiv in resumeBuilder.js.
+  appended googleMap to #mapDiv in resumeBuilder.js to display map
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
 
   /*
   locationFinder() returns an array of every location string from the JSONs
@@ -157,17 +130,27 @@ function initializeMap() {
   function createMapMarker(placeData) {
 
     // The next lines save location data from the search result object to local variables
-    var lat = placeData.geometry.location.lat();  // latitude from the place service
-    var lon = placeData.geometry.location.lng();  // longitude from the place service
-    var name = placeData.formatted_address;   // name of the place from the place service
-    var bounds = window.mapBounds;            // current boundaries of the map window
+    var lat = placeData.geometry.location.lat(); // latitude from the place service
+    var lon = placeData.geometry.location.lng(); // longitude from the place service
+    var name = placeData.formatted_address; // name of the place from the place service
+    var bounds = window.mapBounds; // current boundaries of the map window
 
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
       map: map,
+      animation: google.maps.Animation.DROP,
       position: placeData.geometry.location,
       title: name
     });
+    marker.addListener('click', toggleBounce);
+
+    function toggleBounce() {
+      if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+      }
+    }
 
     // infoWindows are the little helper windows that open when you click
     // or hover over a pin on a map. They usually contain more information
@@ -176,9 +159,10 @@ function initializeMap() {
       content: name
     });
 
-    // hmmmm, I wonder what this is about...
+    // zoom when marker is clicked
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+      map.setZoom(9);
+      map.setCenter(marker.getPosition());
     });
 
     // this is where the pin actually gets added to the map.
@@ -236,16 +220,12 @@ function initializeMap() {
 
 }
 
-/*
-Uncomment the code below when you're ready to implement a Google Map!
-*/
-
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
 window.addEventListener('resize', function(e) {
-//Make sure the map bounds get updated on page resize
- map.fitBounds(mapBounds);
+  //Make sure the map bounds get updated on page resize
+  map.fitBounds(mapBounds);
 });

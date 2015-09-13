@@ -143,37 +143,49 @@ var projects = {
 			"title" : "Portfolio",
 			"dates" : "July 2015",
 			"description" : "links to my portfolio projects",
-			"image" : "images/portfolioimage.jpg"
+			"image" : "images/portfolioimage.jpg",
+			"link" : "http://chiqua25.github.io/joup-creative",
+			"alt" : "portfolio image"
 		},
 		{
 			"title" : "Resume",
 			"dates" : "August 2015",
 			"description" : "interactive online resume",
-			"image" : "images/resumeimage.jpg"
+			"image" : "images/resumeimage.jpg",
+			"link" : "http://chiqua25.github.io/resume",
+			"alt" : "resume image"
 		},
 		{
 			"title" : "Arcade Game",
 			"dates" : "September 2015",
 			"description" : "recreate classic arcade game",
-			"image" : "images/gameimage.jpg"
+			"image" : "images/gameimage.jpg",
+			"link" : "http://chiqua25.github.io/gamify",
+			"alt" : "classic game image"
 		},
 		{
 			"title" : "Website Optimization",
 			"dates" : "September 2015",
 			"description" : "improve performance of website",
-			"image" : "images/performanceimage.jpg"
+			"image" : "images/performanceimage.jpg",
+			"link" : "http://chiqua25.github.io/optimizer",
+			"alt" : "web optimization image"
 		},
 		{
 			"title" : "Neighborhood Map",
 			"dates" : "October 2015",
 			"description" : "single page app featuring map",
-			"image" : "images/mapimage.jpg"
+			"image" : "images/mapimage.jpg",
+			"link" : "http://chiqua25.github.io/mapper",
+			"alt" : "map image"
 		},
 		{
 			"title" : "Feed Reader Testing",
 			"dates" : "October 2015",
 			"description" : "test app that reads RSS feeds.",
-			"image" : "images/feederimage.jpg"
+			"image" : "images/feederimage.jpg",
+			"link" : "http://chiqua25.github.io/feeder",
+			"alt" : "RSS feed image"
 		}
 	]
 };
@@ -184,7 +196,7 @@ projects.display = function() {
 
 		$(".project-entry:last").append(HTMLprojectSpan);
 
-		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		var formattedTitle = HTMLprojectTitle.replace("%link%", projects.projects[project].link).replace("%data%", projects.projects[project].title);
 		$(".pic-caption:last").append(formattedTitle);
 
 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
@@ -193,7 +205,7 @@ projects.display = function() {
 		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
 		$(".pic-caption:last").append(formattedDates);
 
-		var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].image);
+		var formattedImage = HTMLprojectImage.replace("%text%", projects.projects[project].alt).replace("%data%", projects.projects[project].image);
 		$(".project-entry:last").append(formattedImage);
 	}
 };

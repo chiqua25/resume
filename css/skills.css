@@ -8,10 +8,10 @@ body {
   width: 1900px;
   margin: 0 auto;
 }
-
 /* -------------------------------------
  * Bar container
  * ------------------------------------- */
+
 .progress-radial {
   float: left;
   margin-right: 10px;
@@ -19,14 +19,13 @@ body {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  -webkit-filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9));
-  filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9));
+  -webkit-filter: drop-shadow(16px 16px 10px rgba(0, 0, 0, 0.9));
+  filter: drop-shadow(16px 16px 10px rgba(0, 0, 0, 0.9));
 }
-
-
 /* -------------------------------------
  * Optional centered circle w/text
  * ------------------------------------- */
+
 .progress-radial .overlay {
   position: absolute;
   width: 100px;
