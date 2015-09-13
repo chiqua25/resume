@@ -100,6 +100,7 @@ a {
 
 #skills {
   justify-content: flex-start;
+  -webkit-justify-content: flex-start;
 }
 
 #skills-h3 {
@@ -146,8 +147,11 @@ a {
 .flex-box {
   display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: row;
   flex-direction: row;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-justify-content: space-around;
   justify-content: space-around;
   padding: 10px;
 }
@@ -155,8 +159,11 @@ a {
 .flex-box-column {
   display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-justify-content: space-around;
   justify-content: space-around;
   padding: 10px;
   height: 100px;
@@ -506,6 +513,7 @@ p {
 }
 
 .eqWrap {
+  display: -webkit-flex;
   display: flex;
   border-top: 1px solid #fffde8;
   border-bottom: 1px solid #fffde8;
@@ -524,6 +532,7 @@ p {
 }
 
 .equalHW {
+  -webkit-box-flex: 1;
   flex: 1;
 }
 
