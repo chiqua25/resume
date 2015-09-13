@@ -223,8 +223,7 @@ var education = {
 		{
 			"name": "Strayer University",
 			"location" : "Alexandria, Virginia",
-			"degree": "Bachelor of Science",
-			"major": "Computer Science",
+			"degree": "BS, Computer Info Systems",
 			"gradyear": "June 2008"
 		}
 	],
