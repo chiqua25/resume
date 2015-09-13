@@ -215,7 +215,7 @@ projects.display();
 var education = {
 	"schools": [
 		{
-			"name": "Georgia Tech",
+			"name": "Georgia Tech University",
 			"location" : "Atlanta, Georgia",
 			"degree": "MS, Computer Science",
 			"gradyear": "Expected 2017"
