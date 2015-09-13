@@ -216,13 +216,13 @@ var education = {
 	"schools": [
 		{
 			"name": "Georgia Institute of Technology",
-			"location" : "Atlanta, Georgia, US",
+			"location" : "Atlanta, Georgia",
 			"degree": "MS, Computer Science",
 			"gradyear": "Expected 2017"
 		},
 		{
 			"name": "Strayer University",
-			"location" : "Alexandria, Virginia, US",
+			"location" : "Alexandria, Virginia",
 			"degree": "Bachelor of Science",
 			"major": "Computer Science",
 			"gradyear": "June 2008"
