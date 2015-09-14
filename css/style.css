@@ -99,8 +99,15 @@ a {
 }
 
 #skills {
-  justify-content: flex-start;
   -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+<<<<<<< HEAD
+  -webkit-justify-content: flex-start;
+=======
+
+>>>>>>> gh-pages
 }
 
 #skills-h3 {
@@ -146,10 +153,16 @@ a {
 
 .flex-box {
   display: -webkit-flex;
+  display: -moz-flexbox;
+  display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
+<<<<<<< HEAD
   -webkit-flex-wrap: wrap;
+=======
+   -webkit-flex-wrap: wrap;
+>>>>>>> gh-pages
   flex-wrap: wrap;
   -webkit-justify-content: space-around;
   justify-content: space-around;
@@ -161,7 +174,11 @@ a {
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
+<<<<<<< HEAD
   -webkit-flex-wrap: wrap;
+=======
+   -webkit-flex-wrap: wrap;
+>>>>>>> gh-pages
   flex-wrap: wrap;
   -webkit-justify-content: space-around;
   justify-content: space-around;
@@ -222,6 +239,9 @@ span {
     width: 150px;
   }
   .welcome-message {
+    display: none;
+  }
+  #skills-h3, #skills {
     display: none;
   }
 }
@@ -532,7 +552,11 @@ p {
 }
 
 .equalHW {
+<<<<<<< HEAD
   -webkit-box-flex: 1;
+=======
+  -webkit-flex: 1;
+>>>>>>> gh-pages
   flex: 1;
 }
 
