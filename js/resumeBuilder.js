@@ -126,7 +126,7 @@ var work = {
 };
 
 work.display = function() {
-	for (job in work.jobs) {
+	for (var job in work.jobs) {
 		$("#work-container").append(HTMLworkStart);
 
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -197,7 +197,7 @@ var projects = {
 };
 
 projects.display = function() {
-	for (project in projects.projects) {
+	for (var project in projects.projects) {
 		$("#project-container").append(HTMLprojectStart);
 
 		$(".project-entry:last").append(HTMLprojectSpan);
@@ -265,10 +265,10 @@ var education = {
 			"year": "2015"
 		}
 	]
-}
+};
 
 education.displaySchool = function() {
-	for (edu in education.schools) {
+	for (var edu in education.schools) {
 		$("#education-wrapper").append(HTMLschoolStart);
 		var schoolIcon = HTMLschoolIcon;
 		var formattedSchool = HTMLschoolName.replace("%data%", education.schools[edu].name);
@@ -283,7 +283,7 @@ education.displaySchool = function() {
 };
 
 education.displayOnlineClasses = function() {
-	for (olc in education.onlineCourses) {
+	for (var olc in education.onlineCourses) {
 		$("#online-container").append(HTMLonlineStart);
 		var formattedOnlineDates = HTMLonlineDates.replace("%month%", education.onlineCourses[olc].month).replace("%year%", education.onlineCourses[olc].year);
 		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[olc].title);
