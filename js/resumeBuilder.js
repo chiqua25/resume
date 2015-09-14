@@ -1,4 +1,6 @@
-//biography object
+'use strict';
+
+// biography object
 var skills = {
 	"computer": [
 		{
@@ -39,6 +41,7 @@ var skills = {
 		}
 	]
 };
+
 var bio = {
 	"name" : "Janice Uwujaren",
 	"role" : "Web Developer",
@@ -55,35 +58,38 @@ var bio = {
 	"bioPic": "images/profilepic.jpg"
 };
 
-//header variables
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.WelcomeMessage);
-$("#header").prepend(formattedRole).prepend(formattedName).prepend(formattedWelcomeMessage);
-//pic and welcome message variables
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-$("#header").append(formattedBioPic);
+bio.display = function() {
+	//header variables
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.WelcomeMessage);
+	$("#header").prepend(formattedRole).prepend(formattedName).prepend(formattedWelcomeMessage);
+	//pic and welcome message variables
+	var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+	$("#header").append(formattedBioPic);
 
-//top contact info variables
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedLinkedIn = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var contactInfo = formattedMobile + formattedEmail + formattedGithub + formattedLinkedIn + formattedTwitter + formattedLocation;
-$("#topContacts").prepend(contactInfo);
-$("#footerContacts").prepend(contactInfo);
+	//top contact info variables
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+	var formattedLinkedIn = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	var contactInfo = formattedMobile + formattedEmail + formattedGithub + formattedLinkedIn + formattedTwitter + formattedLocation;
+	$('#topContacts, #footerContacts').prepend(contactInfo);
 
-//skills info
-  if (bio.skills.computer.length > 0) {
-    $('#header').append(HTMLskillsStart);
+	//skills info
+	  if (bio.skills.computer.length) {
+	    $('#header').append(HTMLskillsStart);
 
-    for (var index in bio.skills.computer) {
-      var formattedSkill = HTMLskills.replace("%data%", bio.skills.computer[index].name).replace("%value%", bio.skills.computer[index].value);
-      $('#skills').append(formattedSkill);
-    }
-  };
+	    for (var i=0; i < bio.skills.computer.length; i++) {
+	      var formattedSkill = HTMLskills.replace("%data%", bio.skills.computer[i].name).replace("%value%", bio.skills.computer[i].value);
+	      $('#skills').append(formattedSkill);
+	    }
+	  }
+};
+
+bio.display();
 
 //work experience variables
 var work = {
@@ -119,7 +125,7 @@ var work = {
 	]
 };
 
-function displayWork() {
+work.display = function() {
 	for (job in work.jobs) {
 		$("#work-container").append(HTMLworkStart);
 
@@ -134,7 +140,7 @@ function displayWork() {
 	}
 };
 
-displayWork();
+work.display();
 
 //project experience variables
 var projects = {
@@ -158,7 +164,7 @@ var projects = {
 		{
 			"title" : "Arcade Game",
 			"dates" : "September 2015",
-			"description" : "recreate classic arcade game",
+			"description" : "Clone of the classic game, Frogger",
 			"image" : "images/gameimage.jpg",
 			"link" : "http://chiqua25.github.io/gamify",
 			"alt" : "classic game image"
@@ -166,7 +172,7 @@ var projects = {
 		{
 			"title" : "Website Optimization",
 			"dates" : "September 2015",
-			"description" : "improve performance of website",
+			"description" : "Optimized critical rendering path of existing website to achieve PageSpeed Insights score above 90",
 			"image" : "images/performanceimage.jpg",
 			"link" : "http://chiqua25.github.io/optimizer",
 			"alt" : "web optimization image"
@@ -174,7 +180,7 @@ var projects = {
 		{
 			"title" : "Neighborhood Map",
 			"dates" : "October 2015",
-			"description" : "single page app featuring map",
+			"description" : "Single-page, responsive application built with Knockout.js framework and hosted on GitHub Pages",
 			"image" : "images/mapimage.jpg",
 			"link" : "http://chiqua25.github.io/mapper",
 			"alt" : "map image"
@@ -227,7 +233,7 @@ var education = {
 			"gradyear": "June 2008"
 		}
 	],
-"onlineCourses": [
+	"onlineCourses": [
 		{
 			"title": "Responsive Web Design",
 			"school": "Udacity",
@@ -261,7 +267,7 @@ var education = {
 	]
 }
 
-function displayEducation() {
+education.displaySchool = function() {
 	for (edu in education.schools) {
 		$("#education-wrapper").append(HTMLschoolStart);
 		var schoolIcon = HTMLschoolIcon;
@@ -276,7 +282,7 @@ function displayEducation() {
 	}
 };
 
-function displayOnline() {
+education.displayOnlineClasses = function() {
 	for (olc in education.onlineCourses) {
 		$("#online-container").append(HTMLonlineStart);
 		var formattedOnlineDates = HTMLonlineDates.replace("%month%", education.onlineCourses[olc].month).replace("%year%", education.onlineCourses[olc].year);
@@ -287,10 +293,11 @@ function displayOnline() {
 
 		$(".online-entry:last").append(formattedOnlineData);
 	}
-}
+};
 
-displayEducation();
-displayOnline();
+education.displaySchool();
+education.displayOnlineClasses();
 
+// googleMap
 $("#mapDiv").append(googleMap);
 
