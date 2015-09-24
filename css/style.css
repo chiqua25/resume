@@ -89,7 +89,7 @@ a {
 }
 
 .welcome-message {
-  font-family: 'Yanone+Kaffeesatz', serif;
+  font-family: 'Yanone+Kaffeesatz', serif; /* font */
   font-size: 40px;
   color: #e9a729;
   line-height: 20px;
