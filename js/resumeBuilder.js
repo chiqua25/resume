@@ -54,7 +54,7 @@ var bio = {
 		"linkedin": "www.linkedin.com/in/januwu"
 	},
 	"skills": skills,
-	"WelcomeMessage": "elegant development for the modern web",
+	"WelcomeMessage": "competent coder",
 	"bioPic": "images/profilepic.jpg"
 };
 
