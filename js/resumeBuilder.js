@@ -148,7 +148,7 @@ var projects = {
 		{
 			"title" : "Portfolio",
 			"dates" : "July 2015",
-			"description" : "links to my portfolio projects",
+			"description" : "example of a portfolio website",
 			"image" : "images/portfolioimage.jpg",
 			"link" : "http://chiqua25.github.io/joup-creative",
 			"alt" : "portfolio image"
@@ -160,7 +160,7 @@ var projects = {
 			"image" : "images/resumeimage.jpg",
 			"link" : "http://chiqua25.github.io/resume",
 			"alt" : "resume image"
-		},
+		}/*,
 		{
 			"title" : "Arcade Game",
 			"dates" : "September 2015",
@@ -192,7 +192,7 @@ var projects = {
 			"image" : "images/feederimage.jpg",
 			"link" : "http://chiqua25.github.io/feeder",
 			"alt" : "RSS feed image"
-		}
+		} */
 	]
 };
 
