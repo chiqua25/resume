@@ -160,15 +160,15 @@ var projects = {
 			"image" : "images/resumeimage.jpg",
 			"link" : "http://chiqua25.github.io/resume",
 			"alt" : "resume image"
-		}/*,
-		{
-			"title" : "Arcade Game",
-			"dates" : "September 2015",
-			"description" : "Clone of the classic game, Frogger",
-			"image" : "images/gameimage.jpg",
-			"link" : "http://chiqua25.github.io/gamify",
-			"alt" : "classic game image"
 		},
+		{
+			"title" : "ICSY Website",
+			"dates" : "work in progress",
+			"description" : "Non-profit website",
+			"image" : "images/ICSY_Website.jpg",
+			"link" : "http://icsy.gear.host",
+			"alt" : "ICSY web"
+		}/*,
 		{
 			"title" : "Website Optimization",
 			"dates" : "September 2015",
