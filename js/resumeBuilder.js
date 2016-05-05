@@ -168,15 +168,15 @@ var projects = {
 			"image" : "images/ICSY_Website.jpg",
 			"link" : "http://icsy.gear.host",
 			"alt" : "ICSY web"
-		}/*,
-		{
-			"title" : "Website Optimization",
-			"dates" : "September 2015",
-			"description" : "Optimized critical rendering path of existing website to achieve PageSpeed Insights score above 90",
-			"image" : "images/performanceimage.jpg",
-			"link" : "http://chiqua25.github.io/optimizer",
-			"alt" : "web optimization image"
 		},
+		{
+			"title" : "Handyman Tools",
+			"dates" : "April 2016",
+			"description" : "Online tools rental service",
+			"image" : "images/handymantoolsimage.jpg",
+			"link" : "http://handymantools.azurewebsites.net",
+			"alt" : "Handyman Tools Rentals"
+		}/*,
 		{
 			"title" : "Neighborhood Map",
 			"dates" : "October 2015",
